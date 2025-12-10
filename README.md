@@ -50,14 +50,19 @@ Technologies Used
 |    JavaScript  | Scroll animations, counters, interactivity |
 
 Screenshots
-<img width="1890" height="866" alt="Screenshot 2025-12-10 200739" src="https://github.com/user-attachments/assets/08114edc-d606-497a-b464-b4403ba86ac0" />
 <img width="1887" height="872" alt="Screenshot 2025-12-10 200722" src="https://github.com/user-attachments/assets/66bf0b59-6c84-4df4-b0c4-1b96ebe1bcbc" />
+<img width="1890" height="866" alt="Screenshot 2025-12-10 200739" src="https://github.com/user-attachments/assets/08114edc-d606-497a-b464-b4403ba86ac0" />
 
 How to Run the Project
+
 git clone https://github.com/oviyababu31/OIBSIP_WebDev_LEVEL1_TASK1.git
+
 cd OIBSIP_WebDev_LEVEL1_TASK1
+
 git add .
+
 git commit -m "Added new files"
+
 git push origin main
 
 
