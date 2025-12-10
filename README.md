@@ -16,6 +16,7 @@ User-friendly navigation with scroll effects
 This design can be used for eco brands, environmental campaigns, NGOs, or sustainability startup websites.
 
 Features
+
 🔹 Dynamic UI Effects
 Animated gradient background
 Floating eco-related icons
