@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoWave – Sustainable Living</title>
+
+<style>
+
+/* ---------------- GLOBAL STYLES ---------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #bff9d2, #8ee6c1, #79d7ee);
+    background-size: 300% 300%;
+    animation: gradientMove 12s ease infinite;
+    overflow-x: hidden;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+[data-animate] {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease-out;
+}
+
+[data-animate].visible {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+header {
+    width: 100%;
+    padding: 22px 8%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.35);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 1000;
+    transition: 0.4s;
+}
+
+header.scrolled {
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0f5132;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #0a5a40;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #0f8a5e;
+}
+
+.floating {
+    position: absolute;
+    width: 70px;
+    opacity: 0.35;
+    filter: blur(1px);
+    animation: floatUp 10s infinite ease-in-out;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-35px); }
+    100% { transform: translateY(0px); }
+}
+
+.hero {
+    padding: 180px 8% 120px;
+    text-align: center;
+    position: relative;
+}
+
+.hero-img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 20px;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.blob {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle at 30% 30%, #c5ffe0, #8eecc5, #4fb3c9);
+    filter: blur(50px);
+    border-radius: 50%;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 3.3rem;
+    color: #06492c;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #0a5a40;
+    max-width: 600px;
+    margin: 0 auto 25px;
+}
+
+.btn-group button {
+    padding: 12px 30px;
+    border-radius: 40px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.4s;
+}
+
+.primary-btn {
+    background: #0f5132;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(15, 81, 50, 0.4);
+}
+
+.primary-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 14px rgba(15, 81, 50, 0.7);
+}
+
+.secondary-btn {
+    background: #fff;
+    color: #0f5132;
+    border: 2px solid #0f5132;
+}
+
+.secondary-btn:hover {
+    background: #d4ffe8;
+}
+
+.divider {
+    width: 100%;
+    overflow: hidden;
+    margin: 60px 0;
+}
+
+.divider svg {
+    display: block;
+    width: 100%;
+}
+
+.section-title {
+    font-size: 2.3rem;
+    text-align: center;
+    color: #06492c;
+    margin-bottom: 40px;
+}
+
+.features {
+    padding: 40px 8%;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: rgba(255,255,255,0.45);
+    backdrop-filter: blur(20px);
+    padding: 15px;
+    text-align: center;
+    border-radius: 22px;
+    border: 1px solid rgba(255,255,255,0.4);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: #084c3a;
+}
+
+.card-text {
+    color: #0a5a40;
+}
+
+.stats {
+    padding: 50px 8%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.stat {
+    margin: 20px;
+}
+
+.stat h2 {
+    font-size: 2.8rem;
+    color: #06492c;
+}
+
+.stat p {
+    font-size: 1rem;
+    color: #0a5a40;
+}
+
+.testimonials {
+    padding: 40px 8%;
+}
+
+.test-card {
+    background: rgba(255,255,255,0.45);
+    backdrop-filter: blur(15px);
+    padding: 25px;
+    margin: 15px auto;
+    max-width: 600px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+.test-card p {
+    color: #0a5a40;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255,255,255,0.4);
+    backdrop-filter: blur(15px);
+}
+
+footer p {
+    color: #0a5a40;
+}
+
+</style>
+</head>
+
+<body>
+
+<header id="navbar">
+    <div class="logo">🌿 EcoWave</div>
+    <nav>
+        <a href="#">Features</a>
+        <a href="#">Benefits</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<!-- FLOATING ELEMENTS -->
+<img src="Biodegradable-plastic.jpg" class="floating" style="top:120px; left:20px;">
+<img src="recycling.jpg" class="floating" style="top:400px; right:30px; animation-delay:2s;">
+<img src="carbonNeutral.jpeg" class="floating" style="top:200px; right:150px; width:60px; animation-duration:12s;">
+
+<!-- HERO -->
+<section class="hero">
+    <div class="blob"></div>
+
+    <h1 data-animate>Live Sustainably, Love Responsibly</h1>
+    <p data-animate>Join the movement towards a greener future with eco-friendly products designed for real impact.</p>
+
+    <img src="header.jpeg" class="hero-img" data-animate alt="EcoWave Hero">
+
+    <div class="btn-group" data-animate>
+        <button class="primary-btn">Start Your Journey →</button>
+        <button class="secondary-btn">Learn More</button>
+    </div>
+</section>
+
+<div class="divider">
+    <svg viewBox="0 0 1440 200"><path fill="#ffffffaa" d="M0,96L1440,0L1440,200L0,200Z"></path></svg>
+</div>
+
+<section class="features">
+    <h2 class="section-title" data-animate>Why Choose EcoWave?</h2>
+
+    <div class="card-grid">
+        <div class="card" data-animate>
+            <img src="Biodegradable-plastic.jpg" alt="Biodegradable">
+            <div class="card-title">Biodegradable</div>
+            <p class="card-text">Our products naturally return to Earth.</p>
+        </div>
+        <div class="card" data-animate>
+            <img src="recycling.jpg" alt="Recyclable">
+            <div class="card-title">Recyclable</div>
+            <p class="card-text">100% recyclable packaging for minimal waste.</p>
+        </div>
+        <div class="card" data-animate>
+            <img src="carbonNeutral.jpeg" alt="Carbon Neutral">
+            <div class="card-title">Carbon Neutral</div>
+            <p class="card-text">Every delivery is carbon offset.</p>
+        </div>
+        <div class="card" data-animate>
+            <img src="saveWater.jpg" alt="Water Saving">
+            <div class="card-title">Water Saving</div>
+            <p class="card-text">Our production uses less water.</p>
+        </div>
+    </div>
+</section>
+
+<section class="stats">
+    <div class="stat" data-animate><h2 id="c1">0</h2><p>Happy Customers</p></div>
+    <div class="stat" data-animate><h2 id="c2">0</h2><p>Eco Products</p></div>
+    <div class="stat" data-animate><h2 id="c3">0%</h2><p>Satisfaction Rate</p></div>
+</section>
+
+<section class="testimonials">
+    <h2 class="section-title" data-animate>What Our Users Say</h2>
+
+    <div class="test-card" data-animate>
+        <p>“EcoWave changed my lifestyle. I love how every product feels natural.”</p>
+        <strong>— Priya S.</strong>
+    </div>
+
+    <div class="test-card" data-animate>
+        <p>“Absolutely amazing! Stylish eco-products that look premium.”</p>
+        <strong>— Arjun K.</strong>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 EcoWave. All Rights Reserved.</p>
+</footer>
+
+<script>
+window.addEventListener("scroll", () => {
+    document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 50);
+});
+
+const elements = document.querySelectorAll("[data-animate]");
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+    });
+});
+elements.forEach(el => observer.observe(el));
+
+function animateValue(id, end, duration) {
+    let obj = document.getElementById(id);
+    let start = 0;
+    let step = (end - start) / (duration / 16);
+    let interval = setInterval(function () {
+        start += step;
+        if (start >= end) {
+            start = end;
+            clearInterval(interval);
+        }
+        obj.textContent = Math.floor(start);
+    }, 16);
+}
+
+setTimeout(() => {
+    animateValue("c1", 50000, 2000);
+    animateValue("c2", 120, 2000);
+    animateValue("c3", 98, 2000);
+}, 1200);
+</script>
+
+</body>
+</html>
