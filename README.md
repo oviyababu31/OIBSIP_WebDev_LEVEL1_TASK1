@@ -21,24 +21,29 @@ Animated gradient background
 Floating eco-related icons
 Smooth scroll reveal animations
 Hover effects on cards and buttons
+
 🔹 Hero Section
 Catchy title and subtitle
 Highlighted CTA buttons
 Attractive hero image with backdrop blur effects
+
 🔹 Features Section
 Grid-based cards showcasing:
 Biodegradable products
 Recyclable materials
 Carbon neutrality
 Water-saving processes
+
 🔹 Animated Statistics
 Counts up automatically when visible:
 Happy Customers
 Eco Products
 Satisfaction Rate
+
 🔹 Testimonials Section
 Clean, minimal testimonial cards
 Subtle UI glass effect
+
 🔹 Fully Responsive Design
 Optimized for desktop, tablet, and mobile screens.
 
