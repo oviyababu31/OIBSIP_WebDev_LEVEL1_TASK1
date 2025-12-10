@@ -4,9 +4,8 @@ A modern, responsive, and eco-inspired website promoting sustainable living and 
 This project focuses on clean UI, smooth animations, and meaningful messaging designed to inspire users toward a greener lifestyle.
 
 Project Overview
-EcoWave is a visually rich and interactive web design created using HTML, CSS, and JavaScript.
+EcoWave is a visually rich and interactive web design created using HTML, CSS.
 It demonstrates:
-Smooth scroll animations
 Gradient motion background
 Floating decorative elements
 Responsive section layouts
@@ -53,7 +52,6 @@ Technologies Used
 | -------------- | ------------------------------------------ |
 |    HTML5       | Structure & layout                         |
 |    CSS3        | Styling, layout, animations                |
-|    JavaScript  | Scroll animations, counters, interactivity |
 
 Screenshots
 <img width="1887" height="872" alt="Screenshot 2025-12-10 200722" src="https://github.com/user-attachments/assets/66bf0b59-6c84-4df4-b0c4-1b96ebe1bcbc" />
@@ -78,5 +76,4 @@ If you'd like to improve animations, UI, or add new features, feel free to open 
 
 Contact
 For any queries or feedback, reach out at:
-✉️ oviyababu67@gmail.com
-Or create an issue in the repository.
+ oviyababu67@gmail.com
